@@ -8,11 +8,20 @@ public class Earthquake {
     private int time,tsunami;
     private float felt,latlong,depth;
     private String mag,date;
+    private long mTimeInMilliseconds;
 
-    public Earthquake(String mag, String location, String date) {
+    public Earthquake(String mag, String location, long mTimeInMilliseconds) {
         this.mag = mag;
         this.location = location;
-        this.date = date;
+    this.mTimeInMilliseconds=mTimeInMilliseconds;
+    }
+
+    public long getmTimeInMilliseconds() {
+        return mTimeInMilliseconds;
+    }
+
+    public void setmTimeInMilliseconds(long mTimeInMilliseconds) {
+        this.mTimeInMilliseconds = mTimeInMilliseconds;
     }
 
     public String getTitle() {

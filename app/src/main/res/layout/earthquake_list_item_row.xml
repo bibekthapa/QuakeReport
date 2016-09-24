@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-   xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-   android:padding="16dp"
-
+    android:orientation="horizontal"
+    android:padding="16dp"
 
 
     >
@@ -13,27 +13,42 @@
         android:id="@+id/magnitude"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="0.8"
-       tools:text="8.9"
+        android:layout_weight="1"
+        tools:text="8.9"
+
 
         />
+
     <TextView
-        android:id="@+id/location"
-        android:layout_width = "0dp"
+        android:id="@+id/location1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="88km N of yelizova"
+
+        />
+
+    <TextView
+        android:id="@+id/location2"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         tools:text="San Fransico CA"
 
         />
+
     <TextView
         android:id="@+id/date"
-        android:layout_width = "0dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1.1"
-        tools:text="Mar 6,2016"
+        android:layout_weight="1"
+        tools:text="Mar 6,2016" />
 
-
-
-        />
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="3:00pm" />
 
 </LinearLayout>
