@@ -4,9 +4,10 @@ package com.example.android.quakereport;
  * Created by HOME on 8/21/2016.
  */
 public class Earthquake {
-    private String title,location,mag,date;
+    private String title,location;
     private int time,tsunami;
     private float felt,latlong,depth;
+    private String mag,date;
 
     public Earthquake(String mag, String location, String date) {
         this.mag = mag;

@@ -31,16 +31,19 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
         Earthquake currentEarthquake=getItem(position);
 
-        TextView mag=(TextView)listItemView.findViewById(R.id.magnitude);
-        mag.setText(currentEarthquake.getMag());
+
 
         TextView loc=(TextView)listItemView.findViewById(R.id.location);
        loc.setText(currentEarthquake.getLocation());
-
+        TextView mag=(TextView)listItemView.findViewById(R.id.magnitude);
+        mag.setText(currentEarthquake.getMag());
         TextView date=(TextView)listItemView.findViewById(R.id.date);
         date.setText(currentEarthquake.getDate());
 
-       return listItemView;
+
+
+
+        return listItemView;
 
 
     }}
