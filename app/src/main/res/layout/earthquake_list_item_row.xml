@@ -20,16 +20,16 @@
         />
 
     <TextView
-        android:id="@+id/location1"
+        android:id="@+id/location_offset"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        tools:text="88km N of yelizova"
+        tools:text="88km N of "
 
         />
 
     <TextView
-        android:id="@+id/location2"
+        android:id="@+id/primary_location"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"

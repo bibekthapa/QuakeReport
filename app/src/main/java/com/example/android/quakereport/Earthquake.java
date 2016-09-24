@@ -10,10 +10,11 @@ public class Earthquake {
     private String mag,date;
     private long mTimeInMilliseconds;
 
+
     public Earthquake(String mag, String location, long mTimeInMilliseconds) {
         this.mag = mag;
         this.location = location;
-    this.mTimeInMilliseconds=mTimeInMilliseconds;
+        this.mTimeInMilliseconds=mTimeInMilliseconds;
     }
 
     public long getmTimeInMilliseconds() {

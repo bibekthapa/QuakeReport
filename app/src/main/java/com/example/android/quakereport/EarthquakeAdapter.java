@@ -14,6 +14,7 @@ import java.util.Date;
  * Created by HOME on 8/22/2016.
  */
 public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
+    private static final String LOCATION_SEPARATOR = " of ";
 
 
     public EarthquakeAdapter(EarthquakeActivity earthquakeActivity, ArrayList<Earthquake> earthquakes) {
@@ -23,6 +24,8 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View listItemView=convertView;
+        String primaryLocation;
+        String locationOffset;
 
         if(listItemView==null)
         {
@@ -35,20 +38,25 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
 
 
-        TextView loc=(TextView)listItemView.findViewById(R.id.location1);
-       loc.setText(currentEarthquake.getLocation());
+
         TextView mag=(TextView)listItemView.findViewById(R.id.magnitude);
         mag.setText(currentEarthquake.getMag());
 
-        String location=currentEarthquake.getLocation();
-        String[] loc1=location.split("of");
+        String originalLocation=currentEarthquake.getLocation();
+        if (originalLocation.contains(LOCATION_SEPARATOR)) {
+            String[] parts = originalLocation.split(LOCATION_SEPARATOR);
+            locationOffset = parts[0] + LOCATION_SEPARATOR;
+            primaryLocation = parts[1];
+        } else {
+            locationOffset = getContext().getString(R.string.near_the);
+            primaryLocation = originalLocation;
+        }
 
-        TextView direction=(TextView)listItemView.findViewById(R.id.location1);
-        direction.setText(loc1[0]+"of");
+        TextView primaryLocationView = (TextView) listItemView.findViewById(R.id.primary_location);
+        primaryLocationView.setText(primaryLocation);
 
-        TextView place=(TextView)listItemView.findViewById(R.id.location2);
-        place.setText(loc1[1]);
-
+        TextView locationOffsetView = (TextView) listItemView.findViewById(R.id.location_offset);
+        locationOffsetView.setText(locationOffset);
 
 
         Date dateobject=new Date(currentEarthquake.getmTimeInMilliseconds());
