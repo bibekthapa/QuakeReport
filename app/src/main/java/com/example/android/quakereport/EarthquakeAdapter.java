@@ -24,7 +24,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
         if(listItemView==null)
         {
-            listItemView= LayoutInflater.from(getContext()).inflate(R.layout.earthquake_list_item,parent,false);
+            listItemView= LayoutInflater.from(getContext()).inflate(R.layout.earthquake_list_item_row,parent,false);
 
 
         }
@@ -33,6 +33,12 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
         TextView mag=(TextView)listItemView.findViewById(R.id.magnitude);
         mag.setText(currentEarthquake.getMag());
+
+        TextView loc=(TextView)listItemView.findViewById(R.id.location);
+       loc.setText(currentEarthquake.getLocation());
+
+        TextView date=(TextView)listItemView.findViewById(R.id.date);
+        date.setText(currentEarthquake.getDate());
 
        return listItemView;
 
