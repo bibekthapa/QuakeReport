@@ -7,11 +7,12 @@ public class Earthquake {
     private String title,location;
     private int time,tsunami;
     private float felt,latlong,depth;
-    private String mag,date;
+    private String date;
     private long mTimeInMilliseconds;
+    private Double mag;
 
 
-    public Earthquake(String mag, String location, long mTimeInMilliseconds) {
+    public Earthquake(Double mag, String location, long mTimeInMilliseconds) {
         this.mag = mag;
         this.location = location;
         this.mTimeInMilliseconds=mTimeInMilliseconds;
@@ -41,11 +42,11 @@ public class Earthquake {
         this.location = location;
     }
 
-    public String getMag() {
+    public Double getMag() {
         return mag;
     }
 
-    public void setMag(String mag) {
+    public void setMag(Double mag) {
         this.mag = mag;
     }
 
