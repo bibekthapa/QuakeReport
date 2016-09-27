@@ -10,12 +10,21 @@ public class Earthquake {
     private String date;
     private long mTimeInMilliseconds;
     private Double mag;
+    private String url;
 
 
-    public Earthquake(Double mag, String location, long mTimeInMilliseconds) {
+    public Earthquake(Double mag, String location, long mTimeInMilliseconds,String url) {
         this.mag = mag;
         this.location = location;
         this.mTimeInMilliseconds=mTimeInMilliseconds;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public long getmTimeInMilliseconds() {

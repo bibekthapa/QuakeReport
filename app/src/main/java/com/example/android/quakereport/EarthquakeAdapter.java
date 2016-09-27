@@ -51,7 +51,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
                mag.setText(formatMagnitude(currentEarthquake.getMag()));
 
         GradientDrawable magnitudeCircle=(GradientDrawable)mag.getBackground();
-        int  magnitudeColor=getMagnitudeColor(currentEarthquake.getMag());
+        int  magnitudeColor=getMagnitudeColor(currentEarthquake.getMag()); // getMagnitudeColor is user defined method
         magnitudeCircle.setColor(magnitudeColor);
 
         String originalLocation=currentEarthquake.getLocation();
@@ -92,7 +92,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
     private int getMagnitudeColor(double magnitude) {
         int magnitudeColorResourceId;
-        int magnitudeFloor = (int) Math.floor(magnitude);
+        int magnitudeFloor = (int) Math.floor(magnitude);// we have to do this since switch statement doesnot accept double values
         switch (magnitudeFloor) {
             case 0:
             case 1:
@@ -127,8 +127,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
                 break;
         }
 
-        return ContextCompat.getColor(getContext(), magnitudeColorResourceId);
-    }
+        return ContextCompat.getColor(getContext(),magnitudeColorResourceId);    }
     private String formatTime(Date dateobject)
     {
         SimpleDateFormat timeFormat=new SimpleDateFormat("hh:mm a");
