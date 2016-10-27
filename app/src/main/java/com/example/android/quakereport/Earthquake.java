@@ -17,6 +17,7 @@ public class Earthquake {
         this.mag = mag;
         this.location = location;
         this.mTimeInMilliseconds=mTimeInMilliseconds;
+        this.url=url;
     }
 
     public String getUrl() {

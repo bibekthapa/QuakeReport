@@ -40,6 +40,8 @@ public class EarthquakeActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.earthquake_list);
 
 
+
+
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -51,6 +53,7 @@ public class EarthquakeActivity extends AppCompatActivity {
                 startActivity(websiteintent);
             }
         });
+
 
 
     }
